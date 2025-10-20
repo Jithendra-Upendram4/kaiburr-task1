@@ -1,0 +1,13 @@
+﻿{
+    "id":  "68f681d9f5a525a87622987f",
+    "name":  "Sample Echo",
+    "owner":  "AutoBot",
+    "command":  "echo Hello from automated run",
+    "taskExecutions":  [
+                           {
+                               "startTime":  "2025-10-20T18:39:21.719Z",
+                               "endTime":  "2025-10-20T18:39:21.725Z",
+                               "output":  "Hello from automated run"
+                           }
+                       ]
+}
