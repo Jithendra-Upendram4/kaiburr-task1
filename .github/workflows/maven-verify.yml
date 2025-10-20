@@ -27,6 +27,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
+      - name: Start MongoDB service (wait for readiness)
+        run: |
+          # wait for MongoDB service to be ready on localhost:27017
+          for i in {1..30}; do
+            (echo > /dev/tcp/localhost/27017) >/dev/null 2>&1 && break || sleep 1
+          done
+
       - name: Build and run tests (skip docker-specific tests)
+        env:
+          # point tests to the service started by this job
+          TEST_MONGO_URI: 'mongodb://localhost:27017/kaiburrdb'
         run: |
           mvn -B -U -DskipTests=false -Dspring.profiles.active=ci verify
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongosh --eval 'db.adminCommand({ping:1})'" --health-interval=10s --health-timeout=5s --health-retries=5
