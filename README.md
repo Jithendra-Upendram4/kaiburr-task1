@@ -13,6 +13,7 @@ This app exposes simple CRUD + execute endpoints for `Task` objects stored in Mo
 docker compose up -d
 ```
 
+
 2. Build the app
 
 Option A — using local Maven (requires Java 21 and Maven installed):
@@ -100,5 +101,15 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 - start MongoDB and the application in Docker,
 - run the integration smoke tests,
 - save useful logs into `docs/` and `artifacts/` (if present).
+
+
+Output Images:
+
+<img width="938" height="939" alt="image" src="https://github.com/user-attachments/assets/8f301ab2-4669-4e33-9403-3b181870eb9d" />
+
+<img width="950" height="926" alt="image" src="https://github.com/user-attachments/assets/909ec553-2241-450f-8b27-1d31b9bde09c" />
+
+<img width="950" height="931" alt="image" src="https://github.com/user-attachments/assets/a92dc35e-c3a6-4248-b7e2-791504bc8241" />
+
 
 Note: The script modifies local Docker resources and may overwrite containers named `kaiburr-mongo` / `kaiburr-app`. Make sure you don't have important containers with those names.
