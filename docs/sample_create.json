@@ -1,13 +1,9 @@
 ﻿{
-    "id":  "68f681d9f5a525a87622987f",
+    "id":  "68f67ffd7cc033fe15a26e96",
     "name":  "Sample Echo",
-    "owner":  "AutoBot",
-    "command":  "echo Hello from automated run",
+    "owner":  "CI Bot",
+    "command":  "echo Hello from sample",
     "taskExecutions":  [
-                           {
-                               "startTime":  "2025-10-20T18:39:21.719Z",
-                               "endTime":  "2025-10-20T18:39:21.725Z",
-                               "output":  "Hello from automated run"
-                           }
+
                        ]
 }
