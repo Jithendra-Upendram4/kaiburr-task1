@@ -79,3 +79,26 @@ Run `docker compose up -d` to start MongoDB on port 27017.
 
 - Commands executed by the server are validated against a whitelist and executed without a shell to reduce risk. Do not expose this service publicly in production without additional safeguards.
 - The project now targets Java 21; ensure your environment uses Java 21.
+
+## Quick reproducible run
+
+I provide an `auto-run.ps1` script that builds, starts required containers, and runs integration smoke tests locally.
+
+How to run (Windows PowerShell):
+
+1. Open PowerShell as Administrator.
+2. From repo root:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\auto-run.ps1
+```
+
+`auto-run.ps1` will:
+
+- build the project,
+- start MongoDB and the application in Docker,
+- run the integration smoke tests,
+- save useful logs into `docs/` and `artifacts/` (if present).
+
+Note: The script modifies local Docker resources and may overwrite containers named `kaiburr-mongo` / `kaiburr-app`. Make sure you don't have important containers with those names.
