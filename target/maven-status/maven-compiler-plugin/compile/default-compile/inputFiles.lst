@@ -1,0 +1,6 @@
+/workspace/src/main/java/com/example/kaiburr/KaiburrTask1Application.java
+/workspace/src/main/java/com/example/kaiburr/controller/TaskController.java
+/workspace/src/main/java/com/example/kaiburr/repository/TaskRepository.java
+/workspace/src/main/java/com/example/kaiburr/service/TaskService.java
+/workspace/src/main/java/com/example/kaiburr/model/TaskExecution.java
+/workspace/src/main/java/com/example/kaiburr/model/Task.java

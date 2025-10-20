@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: kaiburr-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - kaiburr-mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: kaiburr-app
+    ports:
+      - '8080:8080'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/kaiburrdb
+    depends_on:
+      - mongo
+
+volumes:
+  kaiburr-mongo-data:
+    driver: local
